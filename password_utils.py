@@ -73,10 +73,10 @@ class PasswordUtils:
             char_set += "!@#$%^&*()-_=+"  # специальные символы
 
         # Количество возможных комбинаций
-        num_combinations = len(char_set)  length
+        num_combinations = len(char_set) ** length
 
         # Время для взлома (предполагается, что устройство проверяет 100 миллиардов паролей в секунду)
-        guesses_per_second = 10  11  # 100 миллиардов паролей в секунду
+        guesses_per_second = 10 ** 11  # 100 миллиардов паролей в секунду
         time_seconds = num_combinations / guesses_per_second
 
         # Переводим время в более удобный формат (секунды, минуты, часы, дни, годы)
@@ -93,7 +93,7 @@ class PasswordUtils:
         else:
             return "Больше 10 лет"
 
-@staticmethod
+    @staticmethod
     def save_password_to_file(password, custom_keywords):
         try:
             # Открываем файл для записи с кодировкой UTF-8
